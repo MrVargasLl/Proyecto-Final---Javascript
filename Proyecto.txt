@@ -1,0 +1,1 @@
+Vamos a crear un inicio de sesión en la que tengan tres usuarios con correo y contraseña, es decir, un objeto de objetos. Y, si está autenticado, la página arroje comentarios ( de comentarios) y puede hacer comentarios con su perfil. Y si no, un alertamiento de usuario incorrecto.
