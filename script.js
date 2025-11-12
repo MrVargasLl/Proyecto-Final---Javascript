@@ -5,34 +5,34 @@ document.getElementById("btnLogin").addEventListener("click", function() {
   const mensaje = document.getElementById("mensaje");
   
   const Usuarios = { 
-    admin : { Correo: 'admin@go.com', Contraseña: '1234' },
-    user : { Correo: 'user@go.com', Contraseña: '4321'},
-    guest : { Correo: 'guest@go.com', Contraseña: '1324'  }}
-  
-    for (let j in Usuarios) { // Leyendo el objeto Usuarios
+        admin : { Correo: 'admin@go.com', Contraseña: '1234' },
+        user  : { Correo: 'user@go.com', Contraseña: '4321' },
+        guest : { Correo: 'guest@go.com', Contraseña: '1324' }
+    };
 
-      let Aux = Usuarios[j];
+    // Recorremos el objeto buscando coincidencia
+    let accesoPermitido = false;
 
-      for (let y in Aux) {
+    for (let j in Usuarios) {
+        let Aux = Usuarios[j];
 
-      if(Aux.Correo === "admin@go.com" && Aux.Contraseña === "1234") {
-    mensaje.style.color = "green";
-    mensaje.textContent = "Acceso concedido ✅";
-    Misetion.style.display = "block";
-    Misetion1.style.display = "None";
-  } else {
-    mensaje.style.color = "red";
-    mensaje.textContent = "Usuario o contraseña incorrectos ❌";
-  }
-
-
-        
-          
-
-      }
+        if (usuario === Aux.Correo && clave === Aux.Contraseña) {
+            accesoPermitido = true;
+            break;
+        }
     }
 
- 
+    if (accesoPermitido) {
+        mensaje.style.color = "green";
+        mensaje.textContent = "Acceso concedido ✅";
+
+        // Mostramos y ocultamos secciones
+        document.querySelector('.Misetion').style.display = "block";
+        document.querySelector('.Misetion1').style.display = "none";
+    } else {
+        mensaje.style.color = "red";
+        mensaje.textContent = "Usuario o contraseña incorrectos ❌";
+    }
 });
 
 //////////////////////////////////////////////////////////////////////////////////
